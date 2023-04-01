@@ -26,7 +26,7 @@ public class FirstTest {
     void itGreetTheVIP() {
         //A
         String name = "Kuba";
-        XdGreeter greeter = new XdGreeter();
+        FooMooBooZoo greeter = new FooMooBooZoo();
         //Act
         String result = greeter.greet(name);
         //Arrange
