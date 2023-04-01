@@ -25,12 +25,11 @@ public class App {
             greeter.greet(name);
         }
 
-        System.out.println(".......................................");
 
         List<String> uppercasedLadies = names.stream()
                 .filter(name -> name.endsWith("a")) // lambda name: name[-1] == 'a'
                 .map(String::toUpperCase)
-                .toList();
+                .collect(Collectors.toList());
 
         //greet only ladies
         uppercasedLadies.forEach(greeter::greet);
