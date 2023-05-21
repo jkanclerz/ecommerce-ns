@@ -25,7 +25,7 @@ public class CatalogE2ETest {
 
         //Act
         // otworz URL http://localhost:port/api/products
-        ResponseEntity<Product[]> resp = http.getForEntity(url, Product[].class);
+        ResponseEntity<Object[]> resp = http.getForEntity(url, Object[].class);
 
         //Assert
         //status code 200
