@@ -1,9 +1,6 @@
 package pl.jkanclerz.sales;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class SalesContoller {
@@ -23,8 +20,8 @@ public class SalesContoller {
         sales.addToCart(getCurrentCustomer(), productId);
     }
     @PostMapping("/api/offer/accept")
-    void acceptOffer() {
-        sales.acceptOffer(getCurrentCustomer());
+    ReservationDetails acceptOffer(@RequestBody AcceptOfferRequest acceptOfferRequest) {
+        return sales.acceptOffer(getCurrentCustomer(), acceptOfferRequest);
     }
 
     private String getCurrentCustomer() {
